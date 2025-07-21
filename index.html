@@ -147,19 +147,73 @@
                     </a>
                 </div>
                 <div class="about-animation" data-aos="fade-left" data-aos-delay="400">
-                    <div class="dev-illustration">
-                        <div class="code-blocks">
-                            <div class="code-block" style="--delay: 0s;">
-                                <i class="fab fa-python"></i>
+                    <!-- Data Science Animation Container -->
+                    <div class="data-science-demo">
+                        <canvas id="backgroundCanvas" class="bg-canvas"></canvas>
+                        
+                        <div class="demo-header">
+                            <h3 class="animated-title">Data Science Process</h3>
+                            <p class="demo-description">Watch raw data transform into insights</p>
+                        </div>
+                        
+                        <!-- Data Bowl -->
+                        <div class="data-bowl">
+                            <div class="bowl-container">
+                                <div class="bowl"></div>
+                                <div class="data-particles" id="dataParticles"></div>
                             </div>
-                            <div class="code-block" style="--delay: 0.5s;">
-                                <i class="fab fa-react"></i>
+                        </div>
+                        
+                        <!-- Control Buttons -->
+                        <div class="control-panel">
+                            <button class="control-btn start-btn" id="startBtn">
+                                <i class="fas fa-play"></i>
+                                Start Cleaning
+                            </button>
+                            <button class="control-btn reset-btn" id="resetBtn">
+                                <i class="fas fa-undo"></i>
+                                Reset
+                            </button>
+                            <button class="control-btn auto-btn" id="autoBtn">
+                                <i class="fas fa-sync"></i>
+                                Auto Mode
+                            </button>
+                        </div>
+                        
+                        <!-- Clean Data Table -->
+                        <div class="clean-data-container">
+                            <h4>Clean Data Output</h4>
+                            <div class="table-wrapper">
+                                <table class="data-table" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Score</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody">
+                                        <!-- Data will be populated here -->
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="code-block" style="--delay: 1s;">
-                                <i class="fas fa-database"></i>
+                        </div>
+                        
+                        <!-- Process Steps -->
+                        <div class="process-steps">
+                            <div class="step">
+                                <span class="step-number">1</span>
+                                <span class="step-text">Raw Data Collection</span>
                             </div>
-                            <div class="code-block" style="--delay: 1.5s;">
-                                <i class="fab fa-node-js"></i>
+                            <div class="step">
+                                <span class="step-number">2</span>
+                                <span class="step-text">Data Processing</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">3</span>
+                                <span class="step-text">Clean Output</span>
                             </div>
                         </div>
                     </div>
