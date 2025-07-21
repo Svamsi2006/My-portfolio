@@ -1169,9 +1169,240 @@ Provide a helpful, informative response based on Vamsi's portfolio information. 
     }
 }
 
+// Data Science Animation System
+class DataScienceDemo {
+    constructor() {
+        this.canvas = document.getElementById('backgroundCanvas');
+        this.ctx = this.canvas?.getContext('2d');
+        this.particles = [];
+        this.sparkles = [];
+        this.isAutoMode = false;
+        this.autoInterval = null;
+        this.cleanData = [
+            { id: 1, name: 'Alice', age: 28, score: 95, status: 'Active' },
+            { id: 2, name: 'Bob', age: 32, score: 87, status: 'Active' },
+            { id: 3, name: 'Carol', age: 25, score: 92, status: 'Pending' },
+            { id: 4, name: 'David', age: 29, score: 88, status: 'Active' },
+            { id: 5, name: 'Eve', age: 31, score: 96, status: 'Complete' }
+        ];
+        
+        this.init();
+    }
+    
+    init() {
+        if (!this.canvas) return;
+        
+        this.setupCanvas();
+        this.setupEventListeners();
+        this.createParticleBackground();
+        this.createDataParticles();
+        this.animate();
+        
+        // Auto start after 2 seconds
+        setTimeout(() => {
+            this.startDataCleaning();
+        }, 2000);
+    }
+    
+    setupCanvas() {
+        this.resizeCanvas();
+        window.addEventListener('resize', () => this.resizeCanvas());
+    }
+    
+    resizeCanvas() {
+        const rect = this.canvas.parentElement.getBoundingClientRect();
+        this.canvas.width = rect.width;
+        this.canvas.height = rect.height;
+    }
+    
+    setupEventListeners() {
+        const startBtn = document.getElementById('startBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const autoBtn = document.getElementById('autoBtn');
+        
+        startBtn?.addEventListener('click', () => this.startDataCleaning());
+        resetBtn?.addEventListener('click', () => this.resetDemo());
+        autoBtn?.addEventListener('click', () => this.toggleAutoMode());
+    }
+    
+    createParticleBackground() {
+        for (let i = 0; i < 80; i++) {
+            this.particles.push({
+                x: Math.random() * this.canvas.width,
+                y: Math.random() * this.canvas.height,
+                size: Math.random() * 3 + 1,
+                speedX: (Math.random() - 0.5) * 0.5,
+                speedY: (Math.random() - 0.5) * 0.5,
+                color: `hsl(${Math.random() * 360}, 70%, 60%)`,
+                opacity: Math.random() * 0.5 + 0.2
+            });
+        }
+    }
+    
+    createDataParticles() {
+        const dataChars = ['A', 'B', '1', '2', '#', '@', '$', '%', '&', '*'];
+        const container = document.getElementById('dataParticles');
+        if (!container) return;
+        
+        container.innerHTML = '';
+        
+        for (let i = 0; i < 15; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.textContent = dataChars[Math.floor(Math.random() * dataChars.length)];
+            particle.style.animationDelay = `${Math.random() * 3}s`;
+            particle.style.left = `${Math.random() * 80 + 10}%`;
+            particle.style.top = `${Math.random() * 80 + 10}%`;
+            container.appendChild(particle);
+        }
+    }
+    
+    async startDataCleaning() {
+        this.clearTable();
+        await this.createFallingParticles();
+        await this.populateCleanTable();
+        this.createSparkleEffect();
+    }
+    
+    async createFallingParticles() {
+        const dataChars = ['A', 'B', '1', '2', '#', '@', '$', '%', '&', '*'];
+        const bowl = document.querySelector('.data-bowl');
+        if (!bowl) return;
+        
+        const bowlRect = bowl.getBoundingClientRect();
+        const containerRect = bowl.closest('.data-science-demo').getBoundingClientRect();
+        
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'falling-particle';
+            particle.textContent = dataChars[Math.floor(Math.random() * dataChars.length)];
+            
+            const startX = bowlRect.left - containerRect.left + Math.random() * bowlRect.width;
+            const startY = bowlRect.top - containerRect.top + bowlRect.height / 2;
+            
+            particle.style.left = startX + 'px';
+            particle.style.top = startY + 'px';
+            particle.style.animationDelay = `${i * 0.1}s`;
+            
+            bowl.closest('.data-science-demo').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 2000);
+        }
+        
+        return new Promise(resolve => setTimeout(resolve, 2000));
+    }
+    
+    async populateCleanTable() {
+        const tableBody = document.getElementById('tableBody');
+        if (!tableBody) return;
+        
+        for (let i = 0; i < this.cleanData.length; i++) {
+            const row = document.createElement('tr');
+            const data = this.cleanData[i];
+            
+            row.innerHTML = `
+                <td>${data.id}</td>
+                <td>${data.name}</td>
+                <td>${data.age}</td>
+                <td>${data.score}</td>
+                <td>${data.status}</td>
+            `;
+            
+            row.style.animationDelay = `${i * 0.2}s`;
+            tableBody.appendChild(row);
+            
+            await new Promise(resolve => setTimeout(resolve, 200));
+        }
+    }
+    
+    clearTable() {
+        const tableBody = document.getElementById('tableBody');
+        if (tableBody) {
+            tableBody.innerHTML = '';
+        }
+    }
+    
+    createSparkleEffect() {
+        const container = document.querySelector('.data-science-demo');
+        if (!container) return;
+        
+        for (let i = 0; i < 10; i++) {
+            setTimeout(() => {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = `${Math.random() * 2}s`;
+                
+                container.appendChild(sparkle);
+                
+                setTimeout(() => sparkle.remove(), 2000);
+            }, i * 200);
+        }
+    }
+    
+    resetDemo() {
+        this.clearTable();
+        this.createDataParticles();
+        
+        // Remove falling particles
+        document.querySelectorAll('.falling-particle').forEach(p => p.remove());
+        document.querySelectorAll('.sparkle').forEach(s => s.remove());
+    }
+    
+    toggleAutoMode() {
+        const autoBtn = document.getElementById('autoBtn');
+        if (!autoBtn) return;
+        
+        this.isAutoMode = !this.isAutoMode;
+        
+        if (this.isAutoMode) {
+            autoBtn.classList.add('active');
+            this.autoInterval = setInterval(() => {
+                this.startDataCleaning();
+            }, 8000);
+        } else {
+            autoBtn.classList.remove('active');
+            if (this.autoInterval) {
+                clearInterval(this.autoInterval);
+                this.autoInterval = null;
+            }
+        }
+    }
+    
+    animate() {
+        if (!this.ctx) return;
+        
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        // Update and draw background particles
+        this.particles.forEach(particle => {
+            particle.x += particle.speedX;
+            particle.y += particle.speedY;
+            
+            if (particle.x < 0 || particle.x > this.canvas.width) particle.speedX *= -1;
+            if (particle.y < 0 || particle.y > this.canvas.height) particle.speedY *= -1;
+            
+            this.ctx.save();
+            this.ctx.globalAlpha = particle.opacity;
+            this.ctx.fillStyle = particle.color;
+            this.ctx.shadowBlur = 10;
+            this.ctx.shadowColor = particle.color;
+            this.ctx.beginPath();
+            this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            this.ctx.fill();
+            this.ctx.restore();
+        });
+        
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
 // Initialize Chat Widget when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('🚀 DOM loaded, initializing chat widget...');
+    console.log('🚀 DOM loaded, initializing components...');
     
     // Initialize chat widget after a delay to ensure all other scripts are loaded
     setTimeout(() => {
@@ -1183,4 +1414,15 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('❌ Failed to initialize chat widget:', error);
         }
     }, 1000);
+    
+    // Initialize data science demo
+    setTimeout(() => {
+        try {
+            console.log('🔬 Creating data science demo...');
+            window.dataScienceDemo = new DataScienceDemo();
+            console.log('✅ Data science demo initialized successfully!');
+        } catch (error) {
+            console.error('❌ Failed to initialize data science demo:', error);
+        }
+    }, 1500);
 });
