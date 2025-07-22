@@ -26,12 +26,12 @@ window.addEventListener('load', () => {
 
 // Typewriter Effect
 const typewriterTexts = [
-    "Data Analyst & Business Intelligence Expert",
-    "Full Stack Developer & Problem Solver",
-    "Python & JavaScript Enthusiast",
+    "Data Analyst & Business Analyst",
+    "AI web Designer & Developer ",
+    "Python C C++ JAVA DSA",
     "Power BI & Tableau Specialist",
     "AI & Machine Learning Explorer",
-    "Business Analytics & KPI Designer"
+    "UI/UX Designer"
 ];
 
 let textIndex = 0;
@@ -873,8 +873,8 @@ class ChatWidget {
     setupPortfolioContext() {
         this.portfolioData = {
             name: "Vamsi Siva Ganesh Seelam",
-            role: "Data Analyst, Business Intelligence Expert & Full Stack Developer",
-            education: "B.Tech CSE Data Science 2nd Year at Lovely Professional University (2023-2027)",
+            role: "Data Analyst, Business Intelligence Expert & Ai web Designer & Developer",
+            education: "B.Tech CSE Data Science 3rd Year at Lovely Professional University (2023-2027)",
             location: "Punjab, India",
             email: "seelamvamsisivaganesh@gmail.com",
             phone: "+91 9346147336",
@@ -988,7 +988,7 @@ class ChatWidget {
             let errorMessage = "I'm sorry, I'm having trouble connecting right now.";
             
             if (error.message.includes('API key not configured')) {
-                errorMessage = "⚠️ AI chat is currently being configured. Please contact Vamsi directly for now!";
+                errorMessage = "⚠️ Don't worry its just a small Glitch try again once or Please contact Vamsi directly for now!";
             } else if (error.message.includes('403')) {
                 errorMessage = "🔑 API access issue. Please contact Vamsi directly!";
             } else if (error.message.includes('400')) {
