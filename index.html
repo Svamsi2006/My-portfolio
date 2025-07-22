@@ -12,18 +12,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-     <script>
+    <script>
+    // Your Google Apps Script Web App URL
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyz_y519mFMIZe95SbEDOFm476LnM4ZZ10fwzr8TLif0XjdDjqtTbDqZ6DnzkihgTyxfw/exec';
-    const profileId = 'user123'; // You can change this to dynamically track different profiles
 
+    // Send a POST request when the page loads
     fetch(scriptURL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ profileId })
+      body: JSON.stringify({
+        profileId: 'user123' // You can change this to track different profiles
+      })
     })
-    .then(response => console.log('Visit logged'))
+    .then(response => response.text())
+    .then(result => console.log('Logged:', result))
     .catch(error => console.error('Error:', error));
   </script>
     <!-- Loading Screen -->
