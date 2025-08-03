@@ -1038,6 +1038,94 @@
             </div>
         </div>
     </section>
+<script>
+    // Get a reference to the form, submit button, and message element
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const responseMessage = document.getElementById('responseMessage');
+
+    // The Google Apps Script web app URL for the POST request
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxjlnEHHBQ3ENOr8O4MTcoKWxxTbdl8J_5UXFKmr-oIfW9gv-yZh71Mux3VJpAu-D85cg/exec';
+
+    /**
+     * Handles the form submission event.
+     * @param {Event} e The form submission event object.
+     */
+    form.addEventListener('submit', async function(e) {
+        // Prevent the default form submission behavior
+        e.preventDefault();
+
+        // Display a "Sending..." message and disable the button
+        showStatus('sending');
+
+        // Create a FormData object from the form
+        const formData = new FormData(form);
+
+        // Construct the JSON payload with a timestamp
+        const payload = {
+            timestamp: new Date().toISOString(), // Get current UTC timestamp
+            name: formData.get('name') || '',
+            email: formData.get('email') || '',
+            subject: formData.get('subject') || '',
+            message: formData.get('message') || ''
+        };
+        
+        try {
+            // Send the form data to the Google Apps Script using the fetch API
+            const response = await fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors', // Required for Google Apps Script to prevent CORS errors
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            // The 'no-cors' mode means we can't inspect the response status directly.
+            // We assume success and will clear the form.
+            showStatus('success');
+            form.reset(); // Clear form fields on successful submission
+            
+        } catch (error) {
+            console.error('Fetch error:', error);
+            showStatus('error');
+        } finally {
+            // Re-enable the submit button
+            submitBtn.disabled = false;
+        }
+    });
+    
+    /**
+     * Shows a status message to the user and updates button state.
+     * @param {string} type The type of message to display ('sending', 'success', 'error').
+     */
+    function showStatus(type) {
+        responseMessage.style.display = 'block';
+        responseMessage.className = 'form-message';
+        submitBtn.disabled = false;
+
+        switch (type) {
+            case 'sending':
+                responseMessage.textContent = 'Sending...';
+                responseMessage.classList.add('message-sending');
+                submitBtn.disabled = true;
+                break;
+            case 'success':
+                responseMessage.textContent = 'Message sent successfully!';
+                responseMessage.classList.add('message-success');
+                setTimeout(() => {
+                    responseMessage.style.display = 'none';
+                }, 3000); // Hide the success message after 3 seconds
+                break;
+            case 'error':
+                responseMessage.textContent = 'An error occurred. Please try again.';
+                responseMessage.classList.add('message-error');
+                break;
+            default:
+                break;
+        }
+    }
+</script>
 
     <!-- Footer -->
     <footer class="footer">
@@ -1140,3 +1228,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
