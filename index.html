@@ -32,6 +32,97 @@
 
 </head>
 <body>
+    <!-- Animated Background Elements -->
+    <div class="bg-animation-container">
+        <!-- Floating Tech Icons -->
+        <div class="floating-tech-icons">
+            <div class="tech-particle" data-tech="python"><i class="fab fa-python"></i></div>
+            <div class="tech-particle" data-tech="js"><i class="fab fa-js-square"></i></div>
+            <div class="tech-particle" data-tech="react"><i class="fab fa-react"></i></div>
+            <div class="tech-particle" data-tech="database"><i class="fas fa-database"></i></div>
+            <div class="tech-particle" data-tech="chart"><i class="fas fa-chart-line"></i></div>
+            <div class="tech-particle" data-tech="brain"><i class="fas fa-brain"></i></div>
+            <div class="tech-particle" data-tech="code"><i class="fas fa-code"></i></div>
+            <div class="tech-particle" data-tech="analytics"><i class="fas fa-chart-bar"></i></div>
+            <div class="tech-particle" data-tech="cloud"><i class="fas fa-cloud"></i></div>
+            <div class="tech-particle" data-tech="ai"><i class="fas fa-robot"></i></div>
+            <div class="tech-particle" data-tech="data"><i class="fas fa-chart-pie"></i></div>
+            <div class="tech-particle" data-tech="network"><i class="fas fa-network-wired"></i></div>
+        </div>
+
+        <!-- Geometric Shapes -->
+        <div class="geometric-shapes">
+            <div class="shape triangle"></div>
+            <div class="shape circle"></div>
+            <div class="shape square"></div>
+            <div class="shape hexagon"></div>
+            <div class="shape diamond"></div>
+            <div class="shape pentagon"></div>
+        </div>
+
+        <!-- Data Streams -->
+        <div class="data-streams">
+            <div class="data-stream stream-1">
+                <div class="data-bit">01</div>
+                <div class="data-bit">11</div>
+                <div class="data-bit">00</div>
+                <div class="data-bit">10</div>
+                <div class="data-bit">01</div>
+            </div>
+            <div class="data-stream stream-2">
+                <div class="data-bit">ML</div>
+                <div class="data-bit">AI</div>
+                <div class="data-bit">DS</div>
+                <div class="data-bit">BI</div>
+                <div class="data-bit">DA</div>
+            </div>
+            <div class="data-stream stream-3">
+                <div class="data-bit">API</div>
+                <div class="data-bit">SQL</div>
+                <div class="data-bit">ETL</div>
+                <div class="data-bit">KPI</div>
+                <div class="data-bit">EDA</div>
+            </div>
+        </div>
+
+        <!-- Connecting Lines -->
+        <div class="connection-lines">
+            <svg class="connection-svg" width="100%" height="100%">
+                <defs>
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.1" />
+                    </linearGradient>
+                </defs>
+                <g class="connection-group">
+                    <!-- Lines will be dynamically generated -->
+                </g>
+            </svg>
+        </div>
+
+        <!-- Matrix Rain Effect -->
+        <div class="matrix-rain">
+            <canvas id="matrixCanvas"></canvas>
+        </div>
+
+        <!-- Floating Bubbles -->
+        <div class="floating-bubbles">
+            <div class="bubble bubble-1"></div>
+            <div class="bubble bubble-2"></div>
+            <div class="bubble bubble-3"></div>
+            <div class="bubble bubble-4"></div>
+            <div class="bubble bubble-5"></div>
+            <div class="bubble bubble-6"></div>
+            <div class="bubble bubble-7"></div>
+            <div class="bubble bubble-8"></div>
+        </div>
+
+        <!-- Particle System -->
+        <div class="particle-system">
+            <canvas id="particleCanvas"></canvas>
+        </div>
+    </div>
+
    <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbyz_y519mFMIZe95SbEDOFm476LnM4ZZ10fwzr8TLif0XjdDjqtTbDqZ6DnzkihgTyxfw/exec';
   const payload = JSON.stringify({ profileId: 'user123' });
@@ -147,15 +238,58 @@
 
     <!-- About Section -->
     <section id="about" class="about">
+        <!-- About Section Animation Elements -->
+        <div class="about-animation-bg">
+            <div class="data-flow-lines">
+                <div class="flow-line line-1"></div>
+                <div class="flow-line line-2"></div>
+                <div class="flow-line line-3"></div>
+                <div class="flow-line line-4"></div>
+            </div>
+            <div class="floating-keywords">
+                <span class="keyword k1">Python</span>
+                <span class="keyword k2">Data Science</span>
+                <span class="keyword k3">Analytics</span>
+                <span class="keyword k4">Machine Learning</span>
+                <span class="keyword k5">AI</span>
+                <span class="keyword k6">Business Intelligence</span>
+                <span class="keyword k7">Visualization</span>
+                <span class="keyword k8">Insights</span>
+            </div>
+            <div class="animated-icons">
+                <div class="icon-element icon-1"><i class="fas fa-chart-line"></i></div>
+                <div class="icon-element icon-2"><i class="fas fa-brain"></i></div>
+                <div class="icon-element icon-3"><i class="fas fa-database"></i></div>
+                <div class="icon-element icon-4"><i class="fas fa-code"></i></div>
+            </div>
+        </div>
+        
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">About Me</h2>
             <div class="about-content">
                 <div class="about-text" data-aos="fade-right" data-aos-delay="200">
-                    <p>I'm Vamsi Siva Ganesh Seelam, a passionate Data Analyst, Business Analyst, and AI Web Developer with a strong foundation in computer science. I specialize in deriving meaningful insights from complex datasets, creating powerful business intelligence solutions, and building end-to-end web applications using AI.</p>
-                    
-                    <p>Currently pursuing my B.Tech in Computer Science Engineering with a focus on Data Science and AI Web Development. I excel in transforming raw data into actionable business insights using advanced analytics tools like Power BI, Tableau, and Excel, while also developing robust web solutions.</p>
-                    
-                    <p>My expertise spans across data analysis, business intelligence, market research, and ai web development. I enjoy analyzing data to uncover patterns that drive strategic decision-making, designing comprehensive dashboards and KPI reports, and solving complex problems through innovative web solutions. My goal is to leverage technology and analytics to build data-driven applications that address real-world business challenges.</p>
+                    <!-- Enhanced animated introduction -->
+                    <div class="intro-section">
+                        <div class="intro-card card-1" data-aos="fade-up" data-aos-delay="300">
+                            <h3><i class="fas fa-user-graduate"></i> Who I Am</h3>
+                            <p>I'm <span class="highlight-text">Vamsi Siva Ganesh Seelam</span>, a passionate Data Analyst, Business Analyst, and AI Web Developer with a strong foundation in computer science.</p>
+                        </div>
+                        
+                        <div class="intro-card card-2" data-aos="fade-up" data-aos-delay="500">
+                            <h3><i class="fas fa-graduation-cap"></i> My Journey</h3>
+                            <p>Currently pursuing my <span class="highlight-text">B.Tech in Computer Science Engineering</span> with a focus on Data Science and AI Web Development, specializing in modern technologies and real-world applications.</p>
+                        </div>
+                        
+                        <div class="intro-card card-3" data-aos="fade-up" data-aos-delay="700">
+                            <h3><i class="fas fa-rocket"></i> My Expertise</h3>
+                            <p>I excel in <span class="highlight-text">transforming raw data into actionable business insights</span> using advanced analytics tools like Power BI, Tableau, and Excel, while also developing robust web solutions.</p>
+                        </div>
+                        
+                        <div class="intro-card card-4" data-aos="fade-up" data-aos-delay="900">
+                            <h3><i class="fas fa-target"></i> My Mission</h3>
+                            <p>My goal is to <span class="highlight-text">leverage technology and analytics</span> to build data-driven applications that address real-world business challenges and drive strategic decision-making.</p>
+                        </div>
+                    </div>
                     
                     <div class="personal-info">
                         <div class="info-item">
@@ -263,6 +397,29 @@
 
     <!-- Education & Experience Section -->
     <section id="education" class="education">
+        <!-- Education Section Animation Elements -->
+        <div class="education-animation-bg">
+            <div class="timeline-particles">
+                <div class="particle p1"></div>
+                <div class="particle p2"></div>
+                <div class="particle p3"></div>
+                <div class="particle p4"></div>
+                <div class="particle p5"></div>
+            </div>
+            <div class="knowledge-symbols">
+                <div class="symbol s1">📚</div>
+                <div class="symbol s2">🎓</div>
+                <div class="symbol s3">💼</div>
+                <div class="symbol s4">🏆</div>
+                <div class="symbol s5">⚡</div>
+            </div>
+            <div class="growth-lines">
+                <div class="growth-line gl1"></div>
+                <div class="growth-line gl2"></div>
+                <div class="growth-line gl3"></div>
+            </div>
+        </div>
+        
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Education & Experience</h2>
             <div class="timeline">
@@ -335,6 +492,29 @@
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
+        <!-- Projects Section Animation Elements -->
+        <div class="projects-animation-bg">
+            <div class="code-matrix">
+                <div class="matrix-line ml1">&lt;/&gt;</div>
+                <div class="matrix-line ml2">{}</div>
+                <div class="matrix-line ml3">[]</div>
+                <div class="matrix-line ml4">()</div>
+                <div class="matrix-line ml5">;</div>
+            </div>
+            <div class="project-elements">
+                <div class="element e1"><i class="fab fa-python"></i></div>
+                <div class="element e2"><i class="fab fa-js"></i></div>
+                <div class="element e3"><i class="fas fa-chart-bar"></i></div>
+                <div class="element e4"><i class="fas fa-database"></i></div>
+            </div>
+            <div class="creative-sparks">
+                <div class="spark sp1">✨</div>
+                <div class="spark sp2">💡</div>
+                <div class="spark sp3">🚀</div>
+                <div class="spark sp4">⚙️</div>
+            </div>
+        </div>
+        
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Real world data science Projects</h2>
             <div class="projects-grid">
@@ -428,6 +608,26 @@
 
        <!-- AI Business & Startup Projects Section -->
     <section id="ai-business-projects" class="projects ai-business-projects">
+        <!-- AI Projects Section Animation Elements -->
+        <div class="ai-animation-bg">
+            <div class="neural-waves">
+                <div class="wave w1"></div>
+                <div class="wave w2"></div>
+                <div class="wave w3"></div>
+            </div>
+            <div class="ai-symbols">
+                <div class="ai-symbol as1">🤖</div>
+                <div class="ai-symbol as2">🧠</div>
+                <div class="ai-symbol as3">⚡</div>
+                <div class="ai-symbol as4">🔮</div>
+            </div>
+            <div class="innovation-rings">
+                <div class="ring r1"></div>
+                <div class="ring r2"></div>
+                <div class="ring r3"></div>
+            </div>
+        </div>
+        
         <div class="container">
             <h2 class="section-title animated fadeInUp" data-aos="fade-up">Real world Ai based Business and startup projects</h2>
             <div class="projects-grid">
@@ -525,6 +725,31 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
+        <!-- Skills Section Animation Elements -->
+        <div class="skills-animation-bg">
+            <div class="skill-orbits">
+                <div class="skill-orbit so1">
+                    <div class="orbit-skill">Python</div>
+                </div>
+                <div class="skill-orbit so2">
+                    <div class="orbit-skill">Data</div>
+                </div>
+                <div class="skill-orbit so3">
+                    <div class="orbit-skill">AI</div>
+                </div>
+            </div>
+            <div class="tech-constellation">
+                <div class="tech-star ts1">★</div>
+                <div class="tech-star ts2">✦</div>
+                <div class="tech-star ts3">✧</div>
+                <div class="tech-star ts4">⭐</div>
+                <div class="tech-star ts5">🌟</div>
+            </div>
+            <div class="skill-connections">
+                <canvas id="skillsCanvas"></canvas>
+            </div>
+        </div>
+        
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
             
@@ -807,6 +1032,31 @@
     
     <!-- Certificates Section -->
     <section id="certificates" class="certificates">
+        <!-- Certificates Section Animation Elements -->
+        <div class="certificates-animation-bg">
+            <div class="achievement-rays">
+                <div class="ray r1"></div>
+                <div class="ray r2"></div>
+                <div class="ray r3"></div>
+                <div class="ray r4"></div>
+                <div class="ray r5"></div>
+                <div class="ray r6"></div>
+            </div>
+            <div class="floating-badges">
+                <div class="badge b1">🏅</div>
+                <div class="badge b2">🎖️</div>
+                <div class="badge b3">🏆</div>
+                <div class="badge b4">⭐</div>
+                <div class="badge b5">💎</div>
+            </div>
+            <div class="success-particles">
+                <div class="success-particle sp1"></div>
+                <div class="success-particle sp2"></div>
+                <div class="success-particle sp3"></div>
+                <div class="success-particle sp4"></div>
+            </div>
+        </div>
+        
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Certificates</h2>
             <div class="certificates-carousel" data-aos="fade-up" data-aos-delay="200">
@@ -1034,6 +1284,29 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
+        <!-- Contact Section Animation Elements -->
+        <div class="contact-animation-bg">
+            <div class="communication-signals">
+                <div class="signal s1"></div>
+                <div class="signal s2"></div>
+                <div class="signal s3"></div>
+                <div class="signal s4"></div>
+            </div>
+            <div class="network-nodes">
+                <div class="node n1"></div>
+                <div class="node n2"></div>
+                <div class="node n3"></div>
+                <div class="node n4"></div>
+                <div class="node n5"></div>
+            </div>
+            <div class="message-flow">
+                <div class="message m1">📧</div>
+                <div class="message m2">💬</div>
+                <div class="message m3">📱</div>
+                <div class="message m4">🌐</div>
+            </div>
+        </div>
+        
         <div class="contact-bg">
             <div class="container">
                 <h2 class="section-title" data-aos="fade-up">Let's Connect</h2>

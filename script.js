@@ -5,6 +5,419 @@ AOS.init({
     offset: 100
 });
 
+// ==================== ENHANCED BACKGROUND ANIMATIONS ====================
+
+// Matrix Rain Effect
+function initMatrixRain() {
+    const canvas = document.getElementById('matrixCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+    const matrixArray = matrix.split("");
+    const fontSize = 10;
+    const columns = canvas.width / fontSize;
+    const drops = [];
+
+    for(let x = 0; x < columns; x++) {
+        drops[x] = 1;
+    }
+
+    function drawMatrix() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.fillStyle = '#0bd9f4';
+        ctx.font = fontSize + 'px arial';
+
+        for(let i = 0; i < drops.length; i++) {
+            const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+    }
+
+    setInterval(drawMatrix, 35);
+}
+
+// Particle System
+function initParticleSystem() {
+    const canvas = document.getElementById('particleCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    const particleCount = 50;
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 2;
+            this.vy = (Math.random() - 0.5) * 2;
+            this.radius = Math.random() * 2 + 1;
+            this.opacity = Math.random() * 0.5 + 0.2;
+        }
+
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(11, 217, 244, ${this.opacity})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+    }
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles.forEach(particle => {
+            particle.update();
+            particle.draw();
+        });
+
+        // Draw connections
+        particles.forEach((particle, i) => {
+            particles.slice(i + 1).forEach(otherParticle => {
+                const dx = particle.x - otherParticle.x;
+                const dy = particle.y - otherParticle.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 100) {
+                    ctx.beginPath();
+                    ctx.moveTo(particle.x, particle.y);
+                    ctx.lineTo(otherParticle.x, otherParticle.y);
+                    ctx.strokeStyle = `rgba(11, 217, 244, ${0.2 - distance / 500})`;
+                    ctx.stroke();
+                }
+            });
+        });
+
+        requestAnimationFrame(animateParticles);
+    }
+
+    animateParticles();
+}
+
+// Dynamic Connection Lines
+function initConnectionLines() {
+    const svg = document.querySelector('.connection-svg');
+    if (!svg) return;
+    
+    const group = svg.querySelector('.connection-group');
+    const points = [
+        { x: '10%', y: '20%' },
+        { x: '30%', y: '40%' },
+        { x: '60%', y: '30%' },
+        { x: '80%', y: '60%' },
+        { x: '20%', y: '80%' },
+        { x: '70%', y: '80%' }
+    ];
+
+    function createLine(p1, p2, delay = 0) {
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', p1.x);
+        line.setAttribute('y1', p1.y);
+        line.setAttribute('x2', p2.x);
+        line.setAttribute('y2', p2.y);
+        line.setAttribute('class', 'connection-line');
+        line.style.animationDelay = delay + 's';
+        group.appendChild(line);
+    }
+
+    // Create random connections
+    for (let i = 0; i < points.length - 1; i++) {
+        setTimeout(() => {
+            createLine(points[i], points[i + 1], i * 0.5);
+        }, i * 500);
+    }
+}
+
+// Scroll-based Animation Control
+function initScrollAnimations() {
+    let ticking = false;
+
+    function updateAnimations() {
+        const scrollY = window.pageYOffset;
+        const viewportHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercent = scrollY / (documentHeight - viewportHeight);
+
+        // Update tech particles based on scroll
+        const techParticles = document.querySelectorAll('.tech-particle');
+        techParticles.forEach((particle, index) => {
+            const delay = index * 0.1;
+            const rotation = scrollPercent * 360 + delay * 50;
+            const translateY = Math.sin(scrollPercent * Math.PI * 2 + delay) * 20;
+            
+            particle.style.transform = `translateY(${translateY}px) rotate(${rotation}deg)`;
+        });
+
+        // Update geometric shapes
+        const shapes = document.querySelectorAll('.shape');
+        shapes.forEach((shape, index) => {
+            const scale = 0.8 + Math.sin(scrollPercent * Math.PI * 4 + index) * 0.3;
+            const rotation = scrollPercent * 180 + index * 45;
+            
+            shape.style.transform = `scale(${scale}) rotate(${rotation}deg)`;
+        });
+
+        // Update bubble opacity based on scroll
+        const bubbles = document.querySelectorAll('.bubble');
+        bubbles.forEach((bubble, index) => {
+            const opacity = 0.1 + Math.sin(scrollPercent * Math.PI * 2 + index * 0.5) * 0.3;
+            bubble.style.opacity = Math.max(0.1, opacity);
+        });
+
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateAnimations);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
+}
+
+// Responsive Canvas Resize
+function handleResize() {
+    const matrixCanvas = document.getElementById('matrixCanvas');
+    const particleCanvas = document.getElementById('particleCanvas');
+    
+    if (matrixCanvas) {
+        matrixCanvas.width = window.innerWidth;
+        matrixCanvas.height = window.innerHeight;
+    }
+    
+    if (particleCanvas) {
+        particleCanvas.width = window.innerWidth;
+        particleCanvas.height = window.innerHeight;
+    }
+}
+
+// Initialize all background animations
+function initBackgroundAnimations() {
+    // Add small delay to ensure DOM is ready
+    setTimeout(() => {
+        initMatrixRain();
+        initParticleSystem();
+        initConnectionLines();
+        initScrollAnimations();
+        initMouseInteraction();
+        initSectionAnimations();
+    }, 100);
+}
+
+// ==================== SECTION-SPECIFIC ANIMATIONS ====================
+
+// Initialize section-specific animations
+function initSectionAnimations() {
+    initAboutBinaryRain();
+    initProjectsCodeBlocks();
+    initSkillsNeuralNetwork();
+    initCertificatesSparkles();
+}
+
+// About Section - Binary Rain
+function initAboutBinaryRain() {
+    const binaryRain = document.querySelector('.about-binary-rain');
+    if (!binaryRain) return;
+
+    const binaryChars = ['0', '1', '01', '10', '101', '010', '110', '001'];
+    const columnCount = Math.floor(window.innerWidth / 30);
+
+    for (let i = 0; i < columnCount; i++) {
+        const column = document.createElement('div');
+        column.className = 'binary-column';
+        column.style.left = (i * 30) + 'px';
+        column.style.animationDelay = (Math.random() * 8) + 's';
+        
+        // Generate binary string
+        let binaryString = '';
+        for (let j = 0; j < 20; j++) {
+            binaryString += binaryChars[Math.floor(Math.random() * binaryChars.length)] + '\n';
+        }
+        column.textContent = binaryString;
+        
+        binaryRain.appendChild(column);
+    }
+}
+
+// Projects Section - Floating Code Blocks
+function initProjectsCodeBlocks() {
+    const codeBlocksContainers = document.querySelectorAll('.floating-code-blocks');
+    
+    const codeSnippets = [
+        'def analyze_data():\n  return insights',
+        'SELECT * FROM users\nWHERE active = true',
+        'import pandas as pd\ndf.groupby("category")',
+        'const api = async () => {\n  await fetch("/data")\n}',
+        'from sklearn import models\nclf.fit(X_train, y_train)',
+        'CREATE DASHBOARD\nFROM raw_data',
+        'if __name__ == "__main__":\n  main()',
+        'npm install react\nnpm start'
+    ];
+
+    codeBlocksContainers.forEach(container => {
+        setInterval(() => {
+            if (container.children.length < 3) {
+                const codeBlock = document.createElement('div');
+                codeBlock.className = 'code-block';
+                codeBlock.style.left = Math.random() * 90 + '%';
+                codeBlock.style.animationDelay = '0s';
+                codeBlock.textContent = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+                
+                container.appendChild(codeBlock);
+                
+                setTimeout(() => {
+                    if (codeBlock.parentNode) {
+                        codeBlock.remove();
+                    }
+                }, 20000);
+            }
+        }, 3000);
+    });
+}
+
+// Skills Section - Neural Network
+function initSkillsNeuralNetwork() {
+    const neuralNetwork = document.querySelector('.neural-network');
+    if (!neuralNetwork) return;
+
+    // Create neural nodes
+    const nodePositions = [
+        { x: 20, y: 30 }, { x: 20, y: 70 },
+        { x: 40, y: 20 }, { x: 40, y: 50 }, { x: 40, y: 80 },
+        { x: 60, y: 25 }, { x: 60, y: 55 }, { x: 60, y: 75 },
+        { x: 80, y: 35 }, { x: 80, y: 65 }
+    ];
+
+    nodePositions.forEach((pos, index) => {
+        const node = document.createElement('div');
+        node.className = 'neural-node';
+        node.style.left = pos.x + '%';
+        node.style.top = pos.y + '%';
+        node.style.animationDelay = (index * 0.2) + 's';
+        neuralNetwork.appendChild(node);
+    });
+
+    // Create connections
+    const connections = [
+        [0, 2], [0, 3], [1, 3], [1, 4],
+        [2, 5], [3, 6], [4, 7],
+        [5, 8], [6, 8], [7, 9]
+    ];
+
+    connections.forEach((conn, index) => {
+        const startNode = nodePositions[conn[0]];
+        const endNode = nodePositions[conn[1]];
+        
+        const connection = document.createElement('div');
+        connection.className = 'neural-connection';
+        
+        const deltaX = endNode.x - startNode.x;
+        const deltaY = endNode.y - startNode.y;
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        const angle = Math.atan2(deltaY, deltaX) * 180 / Math.PI;
+        
+        connection.style.left = startNode.x + '%';
+        connection.style.top = startNode.y + '%';
+        connection.style.width = distance * (window.innerWidth / 100) + 'px';
+        connection.style.transform = `rotate(${angle}deg)`;
+        connection.style.transformOrigin = '0 50%';
+        connection.style.animationDelay = (index * 0.3) + 's';
+        
+        neuralNetwork.appendChild(connection);
+    });
+}
+
+// Certificates Section - Achievement Sparkles
+function initCertificatesSparkles() {
+    const sparklesContainer = document.querySelector('.achievement-sparkles');
+    if (!sparklesContainer) return;
+
+    const sparkleSymbols = ['★', '✦', '✧', '✨', '⭐', '🌟', '💫', '✪'];
+
+    function createSparkle() {
+        const sparkle = document.createElement('div');
+        sparkle.className = Math.random() > 0.5 ? 'sparkle star-sparkle' : 'sparkle';
+        sparkle.style.left = Math.random() * 100 + '%';
+        sparkle.style.top = Math.random() * 100 + '%';
+        sparkle.style.animationDelay = Math.random() * 4 + 's';
+        sparkle.textContent = sparkleSymbols[Math.floor(Math.random() * sparkleSymbols.length)];
+        
+        sparklesContainer.appendChild(sparkle);
+        
+        setTimeout(() => {
+            if (sparkle.parentNode) {
+                sparkle.remove();
+            }
+        }, 4000);
+    }
+
+    // Create initial sparkles
+    for (let i = 0; i < 15; i++) {
+        setTimeout(createSparkle, i * 300);
+    }
+
+    // Continuously create new sparkles
+    setInterval(createSparkle, 800);
+}
+
+// Enhanced mobile detection and responsiveness
+function isMobileDevice() {
+    return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Mobile-specific adjustments
+function initMobileOptimizations() {
+    if (isMobileDevice()) {
+        // Hide chatbot on mobile
+        const chatWidget = document.querySelector('.chat-widget');
+        if (chatWidget) {
+            chatWidget.style.display = 'none';
+        }
+
+        // Reduce animation intensity on mobile
+        const techParticles = document.querySelectorAll('.tech-particle');
+        techParticles.forEach(particle => {
+            particle.style.animationDuration = '30s'; // Slower on mobile
+        });
+
+        const bubbles = document.querySelectorAll('.bubble');
+        bubbles.forEach(bubble => {
+            bubble.style.animationDuration = '12s'; // Slower on mobile
+        });
+
+        // Disable mouse trail on mobile
+        document.removeEventListener('mousemove', createMouseTrail);
+    }
+}
+
 // DOM Elements
 const loadingScreen = document.getElementById('loadingScreen');
 const navbar = document.getElementById('navbar');
@@ -21,8 +434,96 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         loadingScreen.classList.add('hidden');
         document.body.style.overflow = 'visible';
+        // Initialize background animations after loading
+        initBackgroundAnimations();
+        initMobileOptimizations();
     }, 1500);
 });
+
+// Window resize handler
+window.addEventListener('resize', () => {
+    handleResize();
+    initMobileOptimizations();
+});
+
+// Orientation change handler for mobile
+window.addEventListener('orientationchange', () => {
+    setTimeout(() => {
+        handleResize();
+        initMobileOptimizations();
+    }, 100);
+});
+
+// Mouse interaction effects
+function initMouseInteraction() {
+    let mouseX = 0;
+    let mouseY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        // Move tech particles slightly towards mouse
+        const techParticles = document.querySelectorAll('.tech-particle');
+        techParticles.forEach((particle, index) => {
+            const rect = particle.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            const deltaX = (mouseX - centerX) * 0.01;
+            const deltaY = (mouseY - centerY) * 0.01;
+            
+            particle.style.transform += ` translate(${deltaX}px, ${deltaY}px)`;
+        });
+
+        // Create mouse trail effect
+        createMouseTrail(mouseX, mouseY);
+    });
+}
+
+// Mouse trail effect
+function createMouseTrail(x, y) {
+    const trail = document.createElement('div');
+    trail.className = 'mouse-trail';
+    trail.style.left = x + 'px';
+    trail.style.top = y + 'px';
+    
+    document.body.appendChild(trail);
+    
+    setTimeout(() => {
+        trail.remove();
+    }, 800);
+}
+
+// Add CSS for mouse trail
+const mouseTrailCSS = `
+.mouse-trail {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, rgba(11, 217, 244, 0.8), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: trailFade 0.8s ease-out forwards;
+}
+
+@keyframes trailFade {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+`;
+
+// Inject mouse trail CSS
+const mouseTrailStyle = document.createElement('style');
+mouseTrailStyle.textContent = mouseTrailCSS;
+document.head.appendChild(mouseTrailStyle);
 
 // Typewriter Effect
 const typewriterTexts = [
