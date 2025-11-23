@@ -43,18 +43,6 @@ Key points:
    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Svamsi2006&theme=tokyonight" alt="GitHub Streak" />
 </p>
 
-## Projects & Links
-
-- Portfolio / Live site: https://vamsisivaganesh.vercel.app
-- Code: https://github.com/Svamsi2006
-- LinkedIn: https://www.linkedin.com/in/vamsi-/
-- Instagram: https://www.instagram.com/__vamsi__2006/
-
-Project ideas you may find in this repo:
-- Personal portfolio website (this site) — frontend with animations and AI chat widget.
-- Data analysis & visualization notebooks.
-- AI-powered demos and small web tools.
-
 ## Quick Setup (for this repo)
 
 If you want to run the portfolio locally:
