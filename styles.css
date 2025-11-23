@@ -1870,6 +1870,94 @@ body::before {
     transform: translateY(-3px);
 }
 
+.animated-cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.85rem 2.25rem;
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    color: var(--text-primary);
+    background: linear-gradient(120deg, rgba(11, 217, 244, 0.18), rgba(0, 230, 118, 0.18), rgba(213, 0, 249, 0.18));
+    border: 1px solid rgba(11, 217, 244, 0.45);
+    box-shadow: 0 10px 30px rgba(11, 217, 244, 0.25);
+    overflow: hidden;
+    isolation: isolate;
+    background-size: 200% 200%;
+    animation: ctaBackground 6s linear infinite;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-position 0.6s ease;
+}
+
+.animated-cta::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(120deg, rgba(11, 217, 244, 0.85), rgba(0, 230, 118, 0.85), rgba(213, 0, 249, 0.85));
+    opacity: 0.18;
+    filter: blur(18px);
+    z-index: -1;
+    animation: ctaGlow 4s ease-in-out infinite;
+}
+
+.animated-cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.35) 50%, transparent 100%);
+    transform: translateX(-120%);
+    transition: transform 0.6s ease;
+    z-index: -1;
+}
+
+.animated-cta:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 18px 45px rgba(11, 217, 244, 0.35);
+    background-position: right center;
+}
+
+.animated-cta:hover::after {
+    transform: translateX(120%);
+}
+
+.animated-cta i {
+    font-size: 1rem;
+}
+
+@keyframes ctaBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes ctaGlow {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.45;
+    }
+}
+
+.section-cta {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.section-cta .animated-cta {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
 .social-links {
     display: flex;
     gap: 1rem;
@@ -2558,16 +2646,12 @@ section {
 }
 
 .company-link {
-    color: var(--primary-green);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
     text-decoration: none;
     font-weight: 600;
-    display: block;
     margin-bottom: 0.5rem;
-    transition: color var(--transition-fast);
-}
-
-.company-link:hover {
-    color: var(--primary-blue);
 }
 
 /* Skills Section */
@@ -2877,26 +2961,25 @@ section {
 .project-links {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .project-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--border-radius-sm);
-    color: white;
-    text-decoration: none;
+    gap: 0.6rem;
     font-weight: 600;
-    transition: all var(--transition-fast);
-    backdrop-filter: blur(10px);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: transform var(--transition-fast);
+}
+
+.project-link.animated-cta {
+    padding: 0.85rem 2.25rem;
 }
 
 .project-link:hover {
-    background: var(--gradient);
-    transform: scale(1.05);
+    transform: translateY(-2px);
 }
 
 .project-content {
@@ -3029,23 +3112,12 @@ section {
 }
 
 .certificate-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: var(--border-radius-sm);
-    color: white;
-    text-decoration: none;
+    gap: 0.6rem;
     font-weight: 600;
-    transition: all var(--transition-fast);
-    backdrop-filter: blur(10px);
-}
-
-.certificate-link:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
+    text-decoration: none;
+    color: var(--text-primary);
 }
 
 /* Contact Section */
