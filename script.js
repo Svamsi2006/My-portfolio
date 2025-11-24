@@ -1383,14 +1383,15 @@ class ChatWidget {
                 dataScience: ["Python (92%)", "Data Structures & Algorithms (88%)", "Pandas & NumPy (85%)", "Data Visualization (82%)", "Machine Learning (78%)", "TensorFlow", "Scikit-learn"],
                 businessAnalytics: ["Excel & Dashboards (90%)", "SQL for Analysis (88%)", "Power BI (87%)", "KPI Design & Reporting (85%)", "Tableau (85%)", "Market & Competitor Research (80%)"],
                 fullStack: ["HTML/CSS/JavaScript (95%)", "React.js (90%)", "REST APIs (88%)", "Node.js & Express (85%)", "MongoDB & SQL (80%)"],
-                cloud: ["Google Cloud Platform", "Amazon Web Services", "Git & GitHub", "CI/CD", "Agile/Scrum", "Security Practices"],
+                cloud: ["Google Cloud", "Git", "GitHub", "Visual Studio Code", "n8n Automations"],
                 softSkills: ["Communication & Presentation", "Critical Thinking", "Problem Solving", "Teamwork", "Time Management"],
                 languages: ["English (Fluent)", "Telugu (Fluent)", "Hindi (Conversational)"]
             },
             projects: [
                 "Data Visualization Dashboard - Interactive dashboard with Python, React, D3.js, Flask",
                 "Predictive Analytics Model - ML model using Python, Scikit-learn, Pandas, TensorFlow",
-                "E-Commerce Platform - Full-stack app with React, Node.js, MongoDB, Redux"
+                "E-Commerce Platform - Full-stack app with React, Node.js, MongoDB, Redux",
+                "LPU Live - Real-time university chat tool where students connect via registration numbers (https://lpulivetimepass.vercel.app/)"
             ],
             experience: [
                 "Founder & CEO at Balaveerulu - AI Comic Book Publisher (2024-Present)",
@@ -1399,6 +1400,9 @@ class ChatWidget {
             ],
             certificates: [
                 "Full Stack Web Development - freeCodeCamp (2023)",
+                "Google Certified Educator - Google for Education (2025)",
+                "Oracle Cloud Infrastructure 2025 Certified Data Science Professional - Oracle (2025)",
+                "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional - Oracle (2025)",
                 "Google Cloud Platform - Google Arcade (2024)",
                 "C++ & Data Structures - Data Flair (2023)"
             ],

@@ -2776,6 +2776,11 @@ section {
     position: relative;
 }
 
+.tech-icon img {
+    width: 32px;
+    height: 32px;
+}
+
 .tech-icon:hover {
     background: var(--gradient);
     color: white;

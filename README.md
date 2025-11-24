@@ -93,6 +93,7 @@ If you'd like to connect, collaborate, or invite me to a project — reach out v
 | Balaveerulu | AI comic book platform bringing kids into customised stories. | [![Portfolio](https://img.shields.io/badge/Balaveerulu-4C1D95?style=flat-square&logo=vercel&logoColor=white)](https://balaveerulu.vercel.app/) |
 | Unifix | Marketplace connecting students for fast, peer-driven support. | [![Portfolio](https://img.shields.io/badge/Unifix-0F172A?style=flat-square&logo=vercel&logoColor=white)](https://unifix.lovable.app/) |
 | Learn Crazy | AI powered adaptive learning experiences with real-time tutoring. | [![Portfolio](https://img.shields.io/badge/Learn%20Crazy-2563EB?style=flat-square&logo=vercel&logoColor=white)](https://learn-crazy.lovable.app/) |
+| LPU Live | Real-time campus chat where students connect instantly using registration numbers. | [![Live](https://img.shields.io/badge/Live-00C7B7?style=flat-square&logo=vercel&logoColor=white)](https://lpulivetimepass.vercel.app/) |
 | AI Chatbot & Photo Enhancer | Conversational assistant that also upgrades image quality. | [![Repo](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Svamsi2006/ai-photo-enhancer) |
 
 
@@ -113,7 +114,7 @@ This is a draft copy of the repository README generated from `index.html` conten
 - Data Science & Analytics: Python (92%), Pandas, NumPy, Data Visualization (82%), Machine Learning (78%), TensorFlow, Scikit-learn
 - Business Analytics: Excel & Dashboards (90%), SQL for Analysis (88%), Power BI (87%), Tableau (85%), KPI Design & Reporting
 - Software & Web: HTML/CSS/JavaScript, React.js, Node.js, REST APIs, MongoDB/SQL (various proficiency across projects)
-- Cloud & Tools: Google Cloud Platform, Oracle Cloud Infrastructure (OCI), AWS, Git & GitHub, CI/CD, Agile/Scrum
+- Cloud & Tools: Google Cloud, Git, GitHub, Visual Studio Code, n8n Automations
 - Soft skills: Communication & Presentation, Critical Thinking, Problem Solving, Teamwork, Time Management
 - Languages: English (Fluent), Telugu (Fluent), Hindi (Conversational)
 
@@ -127,6 +128,7 @@ This is a draft copy of the repository README generated from `index.html` conten
 - Balaveerulu — AI comic-book platform (Founder) (https://balaveerulu.vercel.app/)
 - Unifix — Student solutions marketplace (https://unifix.lovable.app/)
 - Learn Crazy — AI-powered adaptive learning platform (https://learn-crazy.lovable.app/)
+- LPU Live — Real-time campus chat tool connecting students by registration number (https://lpulivetimepass.vercel.app/)
 - AI Chatbot & Photo Enhancer — LLM-based chatbot + photo enhancement (https://github.com/Svamsi2006/ai-photo-enhancer)
 
 If you'd like, I can generate a Projects table with descriptions, tech tags, and direct links to each repo or demo.
@@ -134,6 +136,8 @@ If you'd like, I can generate a Projects table with descriptions, tech tags, and
 ## Certificates (selected)
 
 - Oracle Cloud Infrastructure — *OCI Data Science Professional* (2025) — View: LinkedIn post link in site
+- Google for Education — *Google Certified Educator* (2025) — [View](https://edu.google.accredible.com/ea3edbeb-2d63-4b4a-8168-6c3a3a83815a#acc.d5a0iSAs)
+- Oracle Cloud Infrastructure — *OCI Generative AI Professional* (2025) — [View](https://catalog-education.oracle.com/ords/certview/sharebadge?id=4897831527D87B041B6AD7524836D2EA1094D247E7A898BC770BE83849382D98)
 - freeCodeCamp — *AI Web Web Development* (2023) — View certificate link in site
 - Google Arcade / GCP program (2024) — View certificate link in site
 - Data Flair — *C++ & Data Structures* (2024) — View certificate link in site
