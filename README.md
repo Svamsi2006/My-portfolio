@@ -15,18 +15,8 @@ Key points:
 - Building AI-enabled web solutions and dashboards.
 - Strong foundation in Python, data engineering, and modern frontend tooling.
 
-## Tech Stack
-
-<p align="center">
-   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-   <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
-   <img src="https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=postgresql&logoColor=white" />
-   <img src="https://img.shields.io/badge/Machine_Learning-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
-   <img src="https://img.shields.io/badge/Power_BI-FFB900?style=for-the-badge&logo=microsoft-power-bi&logoColor=black" />
-   <img src="https://img.shields.io/badge/Tableau-4E73C8?style=for-the-badge&logo=tableau&logoColor=white" />
-</p>
+# 💻 Tech Stack:
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=postgresql&logoColor=white) ![Machine Learning](https://img.shields.io/badge/Machine_Learning-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white) ![Power BI](https://img.shields.io/badge/Power_BI-FFB900?style=for-the-badge&logo=microsoft-power-bi&logoColor=black) ![Tableau](https://img.shields.io/badge/Tableau-4E73C8?style=for-the-badge&logo=tableau&logoColor=white)
 
 ## Highlights
 
@@ -36,20 +26,13 @@ Key points:
 - WhatsApp: [+91 93461 47336](https://wa.me/919346147336)
 - Resume: [Download PDF](https://drive.google.com/uc?export=download&id=1Icj34OaJzDSCDVCSYL6zIYq6ozkB-v2j)
 
-## GitHub Stats
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=Svamsi2006&theme=dark&hide_border=false&include_all_commits=true&count_private=true)<br/>
+![](https://nirzak-streak-stats.vercel.app/?user=Svamsi2006&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=Svamsi2006&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
-<p align="center">
-   <img src="https://komarev.com/ghpvc/?username=Svamsi2006&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
-</p>
-
-<p align="center">
-   <img src="https://github-readme-stats.vercel.app/api?username=Svamsi2006&show_icons=true&theme=tokyonight" alt="Vamsi's GitHub Stats" />
-   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Svamsi2006&theme=tokyonight" alt="GitHub Streak" />
-</p>
-
-<p align="center">
-   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Svamsi2006&layout=compact&theme=tokyonight" alt="Top Languages" />
-</p>
+## 🏆 GitHub Trophies
+![](https://github-profile-trophy.vercel.app/?username=Svamsi2006&theme=radical&no-frame=false&no-bg=true&margin-w=4)
 
 ## Activity Overview
 
@@ -75,6 +58,11 @@ Key points:
 - 🐛 Issues: 1%
 - 🔀 Pull Requests
 - 📊 Repository Contributions
+
+---
+[![](https://visitcount.itsvg.in/api?id=Svamsi2006&icon=0&color=0)](https://visitcount.itsvg.in)
+
+<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
 
 ## Quick Setup (for this repo)
 
