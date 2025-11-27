@@ -39,9 +39,42 @@ Key points:
 ## GitHub Stats
 
 <p align="center">
+   <img src="https://komarev.com/ghpvc/?username=Svamsi2006&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
+</p>
+
+<p align="center">
    <img src="https://github-readme-stats.vercel.app/api?username=Svamsi2006&show_icons=true&theme=tokyonight" alt="Vamsi's GitHub Stats" />
    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Svamsi2006&theme=tokyonight" alt="GitHub Streak" />
 </p>
+
+<p align="center">
+   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Svamsi2006&layout=compact&theme=tokyonight" alt="Top Languages" />
+</p>
+
+## Activity Overview
+
+<p align="center">
+   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Svamsi2006&theme=tokyo-night&hide_border=true" alt="Contribution Graph" />
+</p>
+
+### Recent Contributions
+
+- 🔧 Contributed to **PriyobrotoKarmakar/LeetCode-Ans**
+- 🤖 Contributed to **PriyobrotoKarmakar/CodeAnalyser**
+- 📝 Contributed to **PriyobrotoKarmakar/ContentPilot**
+- 🚀 Contributed to **11 other repositories**
+
+### Contribution Stats
+
+<p align="center">
+   <img src="https://github-contributor-stats.vercel.app/api?username=Svamsi2006&limit=5&theme=tokyonight&combine_all_yearly_contributions=true" alt="Top Contributed Repos" />
+</p>
+
+**Activity Breakdown:**
+- 💻 Code Reviews
+- 🐛 Issues: 1%
+- 🔀 Pull Requests
+- 📊 Repository Contributions
 
 ## Quick Setup (for this repo)
 
