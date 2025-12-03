@@ -73,24 +73,22 @@ Security notes:
 
 If you'd like to connect, collaborate, or invite me to a project — reach out via email or LinkedIn.
 
-- Email: <seelamvamsisivaganesh@gmail.com>
-- LinkedIn: https://www.linkedin.com/in/vamsi-/
+- Email: <a href="mailto:seelamvamsisivaganesh@gmail.com">
+         <img alt="Gmail" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">
+       </a>
+- LinkedIn:  <a href="https://www.linkedin.com/in/vamsi-/">
+         <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white">
+    </a>
 
 ---
 ## Projects & Links
 
 <p align="center">
-    <a href="mailto:seelamvamsisivaganesh@gmail.com">
-         <img alt="Gmail" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">
-    </a>
     <a href="https://github.com/Svamsi2006">
          <img alt="GitHub" src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
     </a>
     <a href="https://vamsisivaganesh.vercel.app">
          <img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-3B82F6?style=for-the-badge&logo=firefox&logoColor=white">
-    </a>
-    <a href="https://www.linkedin.com/in/vamsi-/">
-         <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white">
     </a>
     <a href="https://www.instagram.com/__vamsi__2006/">
          <img alt="Instagram" src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white">
@@ -111,5 +109,6 @@ If you'd like to connect, collaborate, or invite me to a project — reach out v
 | Learn Crazy | AI powered adaptive learning experiences with real-time tutoring. | [![Portfolio](https://img.shields.io/badge/Learn%20Crazy-2563EB?style=flat-square&logo=vercel&logoColor=white)](https://learn-crazy.lovable.app/) |
 | LPU Live | Real-time campus chat where students connect instantly using registration numbers. | [![Live](https://img.shields.io/badge/Live-00C7B7?style=flat-square&logo=vercel&logoColor=white)](https://lpulivetimepass.vercel.app/) |
 | AI Chatbot & Photo Enhancer | Conversational assistant that also upgrades image quality. | [![Repo](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Svamsi2006/ai-photo-enhancer) |
+
 
 
