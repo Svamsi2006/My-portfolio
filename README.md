@@ -40,12 +40,7 @@ Key points:
    <img src="https://github-readme-activity-graph.vercel.app/graph?username=Svamsi2006&theme=tokyo-night&hide_border=true" alt="Contribution Graph" />
 </p>
 
-### Recent Contributions
 
-- 🔧 Contributed to **PriyobrotoKarmakar/LeetCode-Ans**
-- 🤖 Contributed to **PriyobrotoKarmakar/CodeAnalyser**
-- 📝 Contributed to **PriyobrotoKarmakar/ContentPilot**
-- 🚀 Contributed to **11 other repositories**
 
 ### Contribution Stats
 
@@ -118,68 +113,3 @@ If you'd like to connect, collaborate, or invite me to a project — reach out v
 | AI Chatbot & Photo Enhancer | Conversational assistant that also upgrades image quality. | [![Repo](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Svamsi2006/ai-photo-enhancer) |
 
 
-This is a draft copy of the repository README generated from `index.html` content. If you like the style and content, I can replace the existing `README.md` with this version or further iterate per your preferences (layout, badges, or additional sections like a full project list). If you want changes now, tell me which sections to update and I'll revise them.
-
-## Education & Experience (highlight)
-
-- **B.Tech in Computer Science Engineering** — Lovely Professional University (2023 - 2027)
-   - Specialization: Data Science & AI Web Development
-- **Oracle Cloud Infrastructure 2025 Certified Data Science Professional** — Oracle (2025)
-- **Founder & CEO** — Balaveerulu (AI Comic Book Publisher) (2024 - Present)
-- **Google Cloud Program Participant** — Google Arcade (June 2024)
-- **TATA Data Visualization virtual experience** — TCS (Aug 2025)
-- **Graphic Design Intern** — Near to College (2025)
-
-## Technical Skills (detailed)
-
-- Data Science & Analytics: Python (92%), Pandas, NumPy, Data Visualization (82%), Machine Learning (78%), TensorFlow, Scikit-learn
-- Business Analytics: Excel & Dashboards (90%), SQL for Analysis (88%), Power BI (87%), Tableau (85%), KPI Design & Reporting
-- Software & Web: HTML/CSS/JavaScript, React.js, Node.js, REST APIs, MongoDB/SQL (various proficiency across projects)
-- Cloud & Tools: Google Cloud, Git, GitHub, Visual Studio Code, n8n Automations
-- Soft skills: Communication & Presentation, Critical Thinking, Problem Solving, Teamwork, Time Management
-- Languages: English (Fluent), Telugu (Fluent), Hindi (Conversational)
-
-## Selected Projects (expanded)
-
-- Sales Dashboard — Real-time dashboard connected to Google Sheets + chatbot; automation with n8n. (Live / Code links in repo)
-- Data Visualization Dashboard — EDA and dashboards for Indian Census data. (https://github.com/Svamsi2006/India-Census-EDA-Project)
-- Predictive Analytics Model — Loan prediction (Scikit-learn, TensorFlow). (https://github.com/Svamsi2006/Ciperschool-project)
-- Data Visualization Web Interface — Upload JSON to build visualizations. (Live demo + repo)
-- Interest Calculator — Multi-language savings & interest calculator (live demo)
-- Balaveerulu — AI comic-book platform (Founder) (https://balaveerulu.vercel.app/)
-- Unifix — Student solutions marketplace (https://unifix.lovable.app/)
-- Learn Crazy — AI-powered adaptive learning platform (https://learn-crazy.lovable.app/)
-- LPU Live — Real-time campus chat tool connecting students by registration number (https://lpulivetimepass.vercel.app/)
-- AI Chatbot & Photo Enhancer — LLM-based chatbot + photo enhancement (https://github.com/Svamsi2006/ai-photo-enhancer)
-
-If you'd like, I can generate a Projects table with descriptions, tech tags, and direct links to each repo or demo.
-
-## Certificates (selected)
-
-- Oracle Cloud Infrastructure — *OCI Data Science Professional* (2025) — View: LinkedIn post link in site
-- Google for Education — *Google Certified Educator* (2025) — [View](https://edu.google.accredible.com/ea3edbeb-2d63-4b4a-8168-6c3a3a83815a#acc.d5a0iSAs)
-- Oracle Cloud Infrastructure — *OCI Generative AI Professional* (2025) — [View](https://catalog-education.oracle.com/ords/certview/sharebadge?id=4897831527D87B041B6AD7524836D2EA1094D247E7A898BC770BE83849382D98)
-- freeCodeCamp — *AI Web Web Development* (2023) — View certificate link in site
-- Google Arcade / GCP program (2024) — View certificate link in site
-- Data Flair — *C++ & Data Structures* (2024) — View certificate link in site
-- Lovely Professional University — *Java Programming* (2025) — View certificate link in site
-- Cipher Schools — *Machine Learning with Data Science* (2025) — View certificate link in site
-- GUVI by Google — *Generative AI* (2024) — View certificate link in site
-- NPTEL — *Cloud Computing* (2025) — View certificate link in site
-- TATA & Forage — *Data Visualisation* (2025) — View certificate link in site
-
-Full certificate links are embedded in `index.html` and will be included in a final README if you want direct verified links per certificate.
-
-## Animations & Research (site highlights)
-
-- The portfolio contains extensive animated sections: floating tech icons, matrix/data-stream effects, particle systems, timelines, and animated project/certificate cards. These are implemented with CSS animations, canvas elements (`matrixCanvas`, `particleCanvas`, `skillsCanvas`, `certBgCanvas`) and AOS library for scroll animations.
-- Research interests / ongoing work: Applied ML for real-world business problems, data visualization techniques, AI-driven product ideas (Balaveerulu, Learn Crazy), and system design for deploying ML on cloud platforms (OCI, GCP).
-
-## Resume / Download formats
-
-- Current resume link: [PDF Download](https://drive.google.com/uc?export=download&id=1Icj34OaJzDSCDVCSYL6zIYq6ozkB-v2j)
-- Suggested: I can add alternate formats (DOCX, printable HTML) and attach them here. Tell me which formats you want and I will add direct download links.
-
----
-
-If you'd like any of these sections expanded (e.g., full project table, badge list, certification verifications, or adding screenshots), tell me which one to work on next and I'll update and push the revision.
